@@ -1,0 +1,5 @@
+checkpoint,accuracy,precision_macro,recall_macro
+reports/customcnn_adam.pt,0.9919,0.9918,0.9919
+reports/customcnn_adam.pt,0.9919,0.9918,0.9919
+reports/customcnn_sgd.pt,0.9856,0.9856,0.9856
+reports/customcnn_sgdm.pt,0.9922,0.9921,0.9922
