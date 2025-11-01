@@ -6,7 +6,7 @@ Optimizer	  Test       Accuracy
   2        	sgd_mom    	0.991333
 
 
-              --SGD--
+              --ADAM--
      precision 	recall 	f1-score	support
   0	  0.976	    0.998	  0.987    	1035.00
   1	  0.992	    0.997	  0.995	    1182.00
