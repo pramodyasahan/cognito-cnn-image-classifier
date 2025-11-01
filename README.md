@@ -1,7 +1,7 @@
 #CNN Image Classifier
 
 <p align="center">
-  <img src="assets/header_banner.png" alt="Cognito CNN Classifier Banner" width="100%">
+  <img src="assets/cognito.png" alt="Cognito CNN Classifier Banner" width="100%">
 </p>
 
 <h1 align="center">🧠 CNN Digit Classifier — Optimizer & Transfer Learning Analysis</h1>
