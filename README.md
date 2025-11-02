@@ -175,8 +175,6 @@ Member 1 — Ishan W. A. (220241K) — Baseline model training & experiments (Le
 • Files / scripts produced: main.py, momentum_sweep.py, train_utils.py (training loop), reports/customcnn_*.pt (checkpoints).
 • Contribution notes: Responsible for experimental design and hyperparameter sweeps related to the baseline. 
 
-Yourgroupno_A03_EN3150
-
 Member 2 — Ridmika K. H. (220535P) — Transfer learning: ResNet finetune & experiments (Lead: ResNet finetuning in Part B)
 • Took responsibility for transfer-learning with ResNet18: building the factory, freezing backbone, replacing heads and fine-tuning on MNIST (resized to 224×224×3).
 • Tuned learning rate, ran 12-epoch fine-tune experiments, produced loss/accuracy plots and the ResNet confusion matrix used in Section 4.6.
@@ -184,15 +182,11 @@ Member 2 — Ridmika K. H. (220535P) — Transfer learning: ResNet finetune & ex
 • Files / scripts produced: transfer_train.py, main_transfer.py (resnet run), reports/resnet18_transfer.pt.
 • Contribution notes: Focused on network adaptation for ImageNet backbones and stability of fine-tuning. 
 
-Yourgroupno_A03_EN3150
-
 Member 3 —H. M. P. S. Vidanapathirana (220661X) — Transfer learning: DenseNet (or alternative backbone) finetune & experiments (Lead: DenseNet finetuning in Part B)
 • Implemented and fine-tuned the second pretrained backbone (DenseNet / second chosen SOTA model) following the same preprocessing and split used by the team.
 • Ran evaluations, saved checkpoints and produced the DenseNet training curves and test metrics used for comparison in Section 4.6.
 • Files / scripts produced: transfer_models.py (densenet factory), reports/densenet_*.pt.
 • Contribution notes: Ensured fair comparison by using identical splits, preprocessing and evaluation scripts. 
-
-Yourgroupno_A03_EN3150
 
 Member 4 — Dilushana H. M. P. S.(210130K) — Integration, error handling, VGG finetuning, final report & reproducibility (project lead for assembly)
 • Performed full code review of other members’ branches, fixed runtime issues, unified the project structure and harmonised the dataset splits (saved under data/splits/) for reproducibility.
