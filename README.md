@@ -155,6 +155,64 @@ To reproduce these experiments:
 
 ---
 
+### ! Contribution
+
+1. Overview of how we organized work
+
+Individual development — each member implemented and ran a separate part of the assignment in their own branch:
+Part A: baseline CNN design, training runs and optimizer/momentum experiments.
+Part B: transfer-learning experiments (two separate pretrained backbones, each fine-tuned independently).
+Code quality & report: overall code review, error handling, reproducibility, and report assembly.
+
+Cross-check & integration — after finishing individual tasks we performed peer code reviews, harmonised data splits and preprocessing, re-ran chosen experiments with the agreed environment, and then built the final combined models (final fine-tuning, selection of best hyperparameters and ensembling where appropriate). This two-stage workflow (individual → team integration) ensured both independence of experiments and a robust final outcome. Evidence and details for all experiments and the integration process are in the project report
+
+2. Individual contributions 
+
+Member 1 — Ishan W. A. (220241K) — Baseline model training & experiments (Lead: Part A)
+• Implemented and trained the baseline CNN (models/cnn.py) used as the control model for comparisons.
+• Ran optimizer experiments (Adam, SGD, SGD+Momentum) and the momentum-sweep (0.0, 0.5, 0.9) and produced the training/validation curves and metric logs.
+• Produced the baseline results CSV, epoch-wise logs and the confusion matrices used in Section 4 of the report.
+• Files / scripts produced: main.py, momentum_sweep.py, train_utils.py (training loop), reports/customcnn_*.pt (checkpoints).
+• Contribution notes: Responsible for experimental design and hyperparameter sweeps related to the baseline. 
+
+Yourgroupno_A03_EN3150
+
+Member 2 — Ridmika K. H. (220535P) — Transfer learning: ResNet finetune & experiments (Lead: ResNet finetuning in Part B)
+• Took responsibility for transfer-learning with ResNet18: building the factory, freezing backbone, replacing heads and fine-tuning on MNIST (resized to 224×224×3).
+• Tuned learning rate, ran 12-epoch fine-tune experiments, produced loss/accuracy plots and the ResNet confusion matrix used in Section 4.6.
+• Produced ResNet checkpoint(s) and the evaluation row(s) appended to reports/final_results.csv.
+• Files / scripts produced: transfer_train.py, main_transfer.py (resnet run), reports/resnet18_transfer.pt.
+• Contribution notes: Focused on network adaptation for ImageNet backbones and stability of fine-tuning. 
+
+Yourgroupno_A03_EN3150
+
+Member 3 —H. M. P. S. Vidanapathirana (220661X) — Transfer learning: DenseNet (or alternative backbone) finetune & experiments (Lead: DenseNet finetuning in Part B)
+• Implemented and fine-tuned the second pretrained backbone (DenseNet / second chosen SOTA model) following the same preprocessing and split used by the team.
+• Ran evaluations, saved checkpoints and produced the DenseNet training curves and test metrics used for comparison in Section 4.6.
+• Files / scripts produced: transfer_models.py (densenet factory), reports/densenet_*.pt.
+• Contribution notes: Ensured fair comparison by using identical splits, preprocessing and evaluation scripts. 
+
+Yourgroupno_A03_EN3150
+
+Member 4 — Dilushana H. M. P. S.(210130K) — Integration, error handling, VGG finetuning, final report & reproducibility (project lead for assembly)
+• Performed full code review of other members’ branches, fixed runtime issues, unified the project structure and harmonised the dataset splits (saved under data/splits/) for reproducibility.
+• Fine-tuned VGG16 as an additional transfer model and ran the final comparative runs reported in the paper (VGG results appear in Section 4.6).
+• Assembled the final PDF report (text, figures, appendices), prepared the requirements.txt and environment notes, and created the reproducibility checklist (random seeds, exact splits, training commands).
+• Files / scripts produced: README.md, requirements.txt, reports/* figures, and the final compiled report Yourgroupno_A03_EN3150.pdf.
+• Contribution notes: Ownership of integration, final model runs, and report polishing / submission.
+
+3. team contributions (what we did together)
+
+Harmonised dataset & experimental protocol — We used the same 70:15:15 stratified split for all runs and fixed the random seed so that baseline and TL results are directly comparable. (See data/splits/ and reproducibility notes.) 
+
+Peer review + cross-validation of results — Each member’s final checkpoints and logs were inspected by at least one other member; suspicious runs were re-executed on the common environment.
+
+Final model building — After verifying individual experiments we re-trained selected best models (baseline + the best TL backbones) with the agreed hyperparameters and produced final figures/tables and the reports/final_results.csv.
+
+Optional ensemble (if used) — If the team elects to include an ensemble, we combined top models (e.g., VGG + ResNet + baseline) using simple majority voting on the test set and recorded the ensemble metrics in the final report. (This step was discussed and executed jointly; details appear in the results appendix.)
+
+All members contributed substantially. Ishan W.A. led baseline model development and optimizer experiments; Ridmika K.H. and Vidhanapathirana, each ran independent transfer-learning fine-tuning experiments (ResNet18, DenseNet); Dilushana H. M. P. S. consolidated code, performed additional fine-tuning (VGG16), managed reproducibility and prepared the final report. After individual checks the team jointly re-ran the selected best models and produced the final analysis and results.
+
 <p align="center">
   <sub>© 2025 Team Cognito · Department of Electrical Engineering, University of Moratuwa</sub>
 </p>
