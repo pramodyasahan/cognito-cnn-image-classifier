@@ -182,7 +182,7 @@ Member 2 — Ridmika K. H. (220535P) — Transfer learning: ResNet finetune & ex
 • Files / scripts produced: transfer_train.py, main_transfer.py (resnet run), reports/resnet18_transfer.pt.
 • Contribution notes: Focused on network adaptation for ImageNet backbones and stability of fine-tuning. 
 
-Member 3 —H. M. P. S. Vidanapathirana (220661X) — Transfer learning: DenseNet (or alternative backbone) finetune & experiments (Lead: DenseNet finetuning in Part B)
+Member 3 — H. M. Vidanapathirana (220661X) — Transfer learning: DenseNet (or alternative backbone) finetune & experiments (Lead: DenseNet finetuning in Part B)
 • Implemented and fine-tuned the second pretrained backbone (DenseNet / second chosen SOTA model) following the same preprocessing and split used by the team.
 • Ran evaluations, saved checkpoints and produced the DenseNet training curves and test metrics used for comparison in Section 4.6.
 • Files / scripts produced: transfer_models.py (densenet factory), reports/densenet_*.pt.
